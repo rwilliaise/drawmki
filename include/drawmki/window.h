@@ -15,6 +15,8 @@ public:
     window(window &&other) = default;
     window &operator=(window &&other) = default;
 
+    int run();
+
 private: 
     GLFWwindow *ptr;
 };

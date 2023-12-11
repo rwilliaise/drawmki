@@ -1,6 +1,6 @@
 
 set(DRAWMKI_HEADERS
-    drawmki/drawmki.h
+    drawmki/drawmki.hpp
     drawmki/window.h
     glad/gl.h
     KHR/khrplatform.h
@@ -13,7 +13,9 @@ add_library(drawmki
     window.cpp
     ${DRAWMKI_HEADERS}
 )
-target_include_directories(drawmki PUBLIC
+target_include_directories(drawmki SYSTEM PUBLIC
     ../include
 )
-target_link_libraries(drawmki PUBLIC glfw3)
+target_link_libraries(drawmki PRIVATE glfw)
+
+add_library(draw::mark_i ALIAS drawmki)
