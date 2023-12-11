@@ -6,7 +6,7 @@ set(DRAWMKI_HEADERS
     KHR/khrplatform.h
 )
 
-list(TRANSFORM DRAWMKI_HEADERS PREPEND ${CMAKE_SOURCE_DIR}/include/)
+list(TRANSFORM DRAWMKI_HEADERS PREPEND ../include/)
 
 add_library(drawmki 
     gl.c
@@ -14,6 +14,6 @@ add_library(drawmki
     ${DRAWMKI_HEADERS}
 )
 target_include_directories(drawmki PUBLIC
-    ${CMAKE_SOURCE_DIR}/include
+    ../include
 )
 target_link_libraries(drawmki PUBLIC glfw3)
